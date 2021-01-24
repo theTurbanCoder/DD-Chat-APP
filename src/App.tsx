@@ -13,13 +13,13 @@ function App() {
 
  return (
   <apiContext.Provider value={chatAPI}>
-   <div className='App'>
+   <React.Fragment>
     {userName ? (
      <Dashboard username={userName} />
     ) : (
      <LoginComponent onUserSubmit={setUserName} />
     )}
-   </div>
+   </React.Fragment>
   </apiContext.Provider>
  )
 }

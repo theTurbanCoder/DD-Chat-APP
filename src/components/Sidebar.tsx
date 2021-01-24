@@ -8,7 +8,13 @@ import './Sidebar.css'
 
 export default function Sidebar(props: sideBarProps) {
  return (
-  <div style={{ width: '250px', backgroundColor: 'rgb(235, 23, 0)' }}>
+  <div
+   style={{
+    width: '250px',
+    backgroundColor: 'rgb(235, 23, 0)',
+    flexGrow: 1,
+    overflowY: 'auto',
+   }}>
    <Nav className='side-nav'>
     <Container className='container-user'>
      <TimerContext>
@@ -16,7 +22,11 @@ export default function Sidebar(props: sideBarProps) {
      </TimerContext>
     </Container>
 
-    <RoomsUI rooms={props.rooms} />
+    <RoomsUI
+     rooms={props.rooms}
+     roomId={props.roomId}
+     roomChangeHandler={props.roomChangeHandler}
+    />
    </Nav>
   </div>
  )

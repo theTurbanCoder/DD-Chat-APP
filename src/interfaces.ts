@@ -1,5 +1,9 @@
 import { Dispatch, SetStateAction } from 'react'
 
+export interface Room {
+ name: string
+ id: number
+}
 export interface LoginProps {
  onUserSubmit: Dispatch<SetStateAction<string>>
 }
@@ -14,6 +18,8 @@ export interface RoomsProps {
   name: string
   id: number
  }>
+ roomId: number
+ roomChangeHandler: (event: React.MouseEvent, room: Room) => void
 }
 
 export interface dashBoardProps {
@@ -23,6 +29,8 @@ export interface dashBoardProps {
 export interface sideBarProps {
  username: string
  rooms: roomsAPI['results']
+ roomId: number
+ roomChangeHandler: (event: React.MouseEvent, room: Room) => void
 }
 
 export interface userInfoProps {
@@ -34,4 +42,19 @@ export interface roomsAPI {
   name: string
   id: number
  }>
+}
+
+export interface roomsInfoApi {
+ name: string
+ id: number
+ users: Array<string>
+}
+
+export interface messagesApi {
+ results: Array<{ name: string; message: string; id: string; reaction: string | null }>
+}
+
+export interface userMessages {
+ chatHeaderDetails: roomsInfoApi
+ chatMessages: messagesApi['results']
 }

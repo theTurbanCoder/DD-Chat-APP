@@ -15,6 +15,8 @@
 .navLinks {
  padding: 0 0;
  position: relative;
+ width: inherit;
+ margin-bottom: 1.5rem;
 }
 
 .navLinks .nav-item::before {
@@ -26,25 +28,29 @@
  width: 3px;
  background-color: black;
  transform: scaleY(0);
- transition: transform 1s;
+ transition: transform 0.2s, width cubic-bezier(1, 0, 0, 1) 0.2s;
 }
 
 .navLinks .nav-item:not(:last-child) {
- margin-bottom: 0.5rem !important;
+ margin-bottom: 3.5rem !important;
 }
 
-.nav-item:hover::before {
+.nav-item:hover::before,
+.nav-item-active::before {
  transform: scaleY(1);
+ width: 100%;
+}
+
+.nav-item-active {
+ background-color: black;
 }
 
 .side-nav .nav-item {
- width: 100%;
- margin-top: 1.5rem;
  padding: 1.5rem 2rem;
 }
 
 .side-nav .nav-item:not(:last-child) {
- margin-bottom: 0.5rem;
+ margin-bottom: 1.5rem;
 }
 
 .nav-link:link,
@@ -53,8 +59,10 @@
  text-decoration: none;
  color: cyan;
  display: block;
+ position: relative;
+ z-index: 1000;
 }
 
-.nav-link:hover {
+/* .nav-link:hover {
  color: black;
-}
+} */

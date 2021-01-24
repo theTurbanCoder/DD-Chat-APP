@@ -1,0 +1,60 @@
+.side-nav {
+ font-size: 1.4rem;
+ margin-top: 1rem;
+ text-decoration: none;
+ text-transform: capitalize;
+ color: cyan;
+}
+
+.container,
+.conatiner-user {
+ padding: 1.5rem 2rem !important;
+ text-transform: capitalize;
+}
+
+.navLinks {
+ padding: 0 0;
+ position: relative;
+}
+
+.navLinks .nav-item::before {
+ content: '';
+ position: absolute;
+ top: 0;
+ left: 0;
+ height: 100%;
+ width: 3px;
+ background-color: black;
+ transform: scaleY(0);
+ transition: transform 1s;
+}
+
+.navLinks .nav-item:not(:last-child) {
+ margin-bottom: 0.5rem !important;
+}
+
+.nav-item:hover::before {
+ transform: scaleY(1);
+}
+
+.side-nav .nav-item {
+ width: 100%;
+ margin-top: 1.5rem;
+ padding: 1.5rem 2rem;
+}
+
+.side-nav .nav-item:not(:last-child) {
+ margin-bottom: 0.5rem;
+}
+
+.nav-link:link,
+.nav-link:visited {
+ padding: 0 0;
+ text-decoration: none;
+ color: cyan;
+ display: block;
+}
+
+.nav-link:hover {
+ color: black;
+}

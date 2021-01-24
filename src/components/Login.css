@@ -1,0 +1,16 @@
+.center-screen {
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ text-align: center;
+ min-height: 100vh;
+}
+
+.login-button,
+.btn-primary,
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:visited {
+ background-color: rgb(235, 23, 0) !important;
+}

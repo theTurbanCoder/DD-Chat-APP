@@ -50,8 +50,24 @@ export interface roomsInfoApi {
  users: Array<string>
 }
 
+export interface messageObject {
+ name: string
+ message: string
+ id: string
+ reaction: string | null
+}
 export interface messagesApi {
- results: Array<{ name: string; message: string; id: string; reaction: string | null }>
+ results: Array<messageObject>
+}
+
+export interface PostApiReturn {
+ results: messageObject
+}
+
+export interface postChatApi {
+ name: string
+ message: string
+ reaction: string | null
 }
 
 export interface userMessages {

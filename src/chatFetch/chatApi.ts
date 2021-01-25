@@ -1,4 +1,10 @@
-import { messagesApi, roomsAPI, roomsInfoApi } from '../interfaces'
+import {
+ messagesApi,
+ PostApiReturn,
+ postChatApi,
+ roomsAPI,
+ roomsInfoApi,
+} from '../interfaces'
 
 export class ChatApi {
  baseUrl = 'http://localhost:8080/api'
@@ -24,8 +30,10 @@ export class ChatApi {
   return await { results: response }
  }
 
- async postMessageFromUserToRoom(roomid: number, postObj: any): Promise<any> {
-  console.log(postObj, 'obj')
+ async postMessageFromUserToRoom(
+  roomid: number,
+  postObj: postChatApi
+ ): Promise<PostApiReturn> {
   const response = await fetch(`${this.baseUrl}/rooms/${roomid}/messages`, {
    method: 'post',
    headers: {

@@ -23,4 +23,17 @@ export class ChatApi {
 
   return await { results: response }
  }
+
+ async postMessageFromUserToRoom(roomid: number, postObj: any): Promise<any> {
+  console.log(postObj, 'obj')
+  const response = await fetch(`${this.baseUrl}/rooms/${roomid}/messages`, {
+   method: 'post',
+   headers: {
+    'Content-Type': 'application/json',
+   },
+   body: JSON.stringify(postObj),
+  }).then((res) => res.json())
+
+  return await { results: response }
+ }
 }

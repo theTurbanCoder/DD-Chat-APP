@@ -7,7 +7,7 @@ export default function UserInfo(props: userInfoProps) {
 
  return (
   <div>
-   <div>{props.username}</div>
+   <h3>{props.username}</h3>
    <div>
     <p>
      {`   

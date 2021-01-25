@@ -3,6 +3,7 @@ import { apiContext } from '../App'
 import { dashBoardProps, messagesApi, roomsAPI, roomsInfoApi } from '../interfaces'
 import Sidebar from './Sidebar'
 import ConversationUI from './ConversationUI'
+import WelcomePage from './WelcomePage'
 
 export default function Dashboard(props: dashBoardProps) {
  const { username } = props
@@ -70,8 +71,22 @@ export default function Dashboard(props: dashBoardProps) {
     />
    </div>
 
-   <div style={{ display: 'flex', width: '100%', flexDirection: 'column' }}>
-    <ConversationUI {...chatDetails} />
+   <div
+    style={{
+     display: 'flex',
+     width: '100%',
+     flexDirection: 'column',
+    }}>
+    {roomID !== -1 && (
+     <ConversationUI
+      {...chatDetails}
+      roomId={roomID}
+      username={username}
+      setChatDetails={setChatDetails}
+     />
+    )}
+
+    {roomID === -1 && <WelcomePage />}
    </div>
   </div>
  )

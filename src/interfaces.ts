@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction } from 'react'
+import { Dispatch, FormEvent, SetStateAction } from 'react'
 
 export interface Room {
  name: string
@@ -57,4 +57,27 @@ export interface messagesApi {
 export interface userMessages {
  chatHeaderDetails: roomsInfoApi
  chatMessages: messagesApi['results']
+ roomId: number
+ username: string
+ setChatDetails: Dispatch<
+  SetStateAction<{
+   chatHeaderDetails: roomsInfoApi
+   chatMessages: messagesApi['results']
+  }>
+ >
+}
+
+export interface ConversationHeaderProps {
+ headerInfo: roomsInfoApi
+}
+
+export interface ConversationChatWindowProps {
+ chatmessages: messagesApi['results']
+ userName: string
+}
+
+export interface ConversationFooterProps {
+ chatMessageTextChangeHandler: (value: string) => void
+ chatText: string
+ handleSendMessage: (evern: FormEvent) => void
 }

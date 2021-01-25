@@ -18,7 +18,7 @@ export default function Login(props: LoginProps) {
 
  return (
   <Container className='center-screen'>
-   <Form onSubmit={handleSubmit} className='w-50'>
+   <Form onSubmit={handleSubmit} className='w-50' id='submitForm'>
     <Form.Group>
      <Form.Control
       type='text'
@@ -27,7 +27,7 @@ export default function Login(props: LoginProps) {
       required
      />
     </Form.Group>
-    <Button className='w-100 login-button' type='submit'>
+    <Button id='loginButton' className='w-100 login-button' type='submit'>
      Join the DooorDash Chat
     </Button>
    </Form>

@@ -1,3 +1,13 @@
 .headerColor {
  color: rgb(235, 23, 0);
 }
+
+.container {
+ margin-top: '1rem' !important;
+}
+
+@media (max-width: 678px) {
+ .headerP {
+  display: none;
+ }
+}

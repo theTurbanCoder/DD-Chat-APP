@@ -31,15 +31,17 @@ export default function ConversationChatHeader(props: ConversationHeaderProps) {
    
    </div> */}
    <Container
-    className='d-flex flex-column'
+    className='headerColor'
     style={{
+     display: 'flex',
      marginTop: '1rem',
+     flexDirection: 'column',
      alignItems: 'center',
      justifyContent: 'center',
      alignContent: 'center',
     }}>
-    <h3 className='headerColor'>{headerInfo.name}</h3>
-    <p className='headerColor'>{headerInfo.users.join(', ')}</p>
+    <h3>{headerInfo.name}</h3>
+    <p className='headerP'>{headerInfo.users.join(', ')}</p>
    </Container>
   </div>
  )

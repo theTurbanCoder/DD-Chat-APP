@@ -32,7 +32,6 @@ export default function Dashboard(props: dashBoardProps) {
   const fetchRooms = async () => {
    try {
     const rooms = await api.getDDRooms()
-    console.log(rooms, 'results')
     setRooms(rooms)
    } catch (error) {}
   }

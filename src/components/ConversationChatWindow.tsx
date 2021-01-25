@@ -16,7 +16,7 @@ export default function ConversationChatWindow(props: ConversationChatWindowProp
       <div
        ref={lastMessage ? setRef : null}
        key={index}
-       className={`my-1 d-flex flex-column m-4 ${
+       className={`my-2 py-2 d-flex flex-column m-4 ${
         fromMe ? 'align-self-end align-items-end' : 'align-items-start'
        }`}>
        <div
